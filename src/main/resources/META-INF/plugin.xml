@@ -1,0 +1,48 @@
+<idea-plugin>
+    <id>org.example.ai_constructor_plugin</id>
+    <name>AI Brain</name>
+    <vendor email="plotnikoffroman@gmail.com">AI BRAIN</vendor>
+    <description><![CDATA[
+<b>Key features include:</b><br>
+- Get a description of a project and its contents in one click<br>
+- Get a description of a file<br>
+- Modify entire files or selected code fragments<br>
+- Generate code at any location<br>
+- Multi-file generation<br>
+- Comment code<br>
+- Chat
+]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <action id="SelectFileAction"
+                class="actions.SelectFileActionsAction"
+                text="Select File for AI Plugin"
+                description="Send file/folder to AI server">
+    <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+    <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+</action>
+        <action id="SelectCutForAIPlugin"
+                class="org.example.ai_constructor_plugin.actions.SelectCutForAIAction"
+                text="Select cut for AI Plugin"
+                description="Отправить выделенный код + промт в AI Plugin">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+        <action id="EnterPromptForAIPlugin"
+                class="org.example.ai_constructor_plugin.actions.EnterPromptForAIAction"
+                text="Enter prompt for AI Plugin"
+                description="Ввести промт и сгенерировать код в текущем месте курсора">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="AI brain"
+                    anchor="right"
+                    factoryClass="org.example.ai_constructor_plugin.toolwindow.MyToolWindowFactory"
+                    icon="/icons/toolWindow.svg"
+                    canCloseContents="false"
+                    stripeTitle="AI Plugin"/>
+    </extensions>
+
+</idea-plugin>
