@@ -1,4 +1,4 @@
-package org.example.ai_constructor_plugin.actions
+package org.aibrain.ai_constructor_plugin.actions
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -54,7 +54,7 @@ class SelectCutForAIAction : AnAction() {
         val image = promptDialog.getImageAsFile()
 
         val frame = com.intellij.openapi.wm.WindowManager.getInstance().getFrame(project)
-        val progressDialog = JDialog(frame, "The content is being generated...", true)
+        val progressDialog = JDialog(frame, "Loading", true)
         val progressBar = JProgressBar()
         progressBar.isIndeterminate = true
 
@@ -82,7 +82,7 @@ class SelectCutForAIAction : AnAction() {
                 try {
                     val updated = get()
                     if (updated == null) {
-                        Messages.showErrorDialog(project, "Server error or invalid response for file request", "AI Plugin")
+                        //Messages.showErrorDialog(project, "Server error or invalid response for file request", "AI Plugin")
                         return
                     }
 

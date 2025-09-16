@@ -110,7 +110,7 @@ class SelectFileAction : AnAction() {
                 ApiClient.sendFileContent(settings.apiKey!!, content, prompt, serverUrl!!, project.name, image)
             }
                 if (updated == null) {
-                    Messages.showErrorDialog(project, "Server error or invalid response for file request", "AI Plugin")
+                    //Messages.showErrorDialog(project, "Server error or invalid response for file request", "AI Plugin")
                     return
                 }
 

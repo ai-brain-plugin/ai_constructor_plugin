@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.example"
-version = "1.0-SNAPSHOT"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -37,7 +37,8 @@ intellijPlatform {
         }
 
         changeNotes = """
-            Initial version
+            - Changes regarding the API key input window
+            - Improved error display for unsuccessful server requests
         """.trimIndent()
     }
 }

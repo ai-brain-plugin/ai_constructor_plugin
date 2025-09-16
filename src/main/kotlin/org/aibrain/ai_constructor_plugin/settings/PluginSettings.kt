@@ -9,7 +9,7 @@ import com.intellij.openapi.components.Service
 @Service
 class PluginSettings : PersistentStateComponent<PluginSettings> {
     var apiKey: String? = null
-    var serverUrl: String = "SOME SERVER URL"
+    var serverUrl: String = "http://5.129.234.234:5000/"
     var isChatRemembered: Boolean? = null
 
     override fun getState(): PluginSettings = this

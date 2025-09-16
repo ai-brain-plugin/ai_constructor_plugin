@@ -41,7 +41,7 @@ class CommentCodeAction : AnAction() {
 
         val content = String(file.contentsToByteArray())
         val prompt = "Add comment on $selectedLang language for this code"
-        val result = RunWithProgress.runWithProgress(project, "The content is being generated...") {
+        val result = RunWithProgress.runWithProgress(project, "Loading") {
             ApiClient.sendFileContent(apiKey, content, prompt, serverUrl, project.name, null)
         }
 
@@ -54,7 +54,7 @@ class CommentCodeAction : AnAction() {
                     Messages.showInfoMessage(project, "Comment skipped", "AI Plugin")
                 }
             } else {
-                Messages.showErrorDialog(project, "Error generating comments", "AI Plugin")
+             //   Messages.showErrorDialog(project, "Error generating comments", "AI Plugin")
             }
 
     }

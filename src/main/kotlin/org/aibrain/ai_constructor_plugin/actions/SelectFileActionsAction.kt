@@ -8,7 +8,7 @@ import settings.KeyDialog
 import settings.MultiPromptDialog
 import settings.ConfirmChangesDialog
 import utils.FileUtils
-import org.example.ai_constructor_plugin.actions.ExplainFolderAction
+import org.aibrain.ai_constructor_plugin.actions.ExplainFolderAction
 import actions.CommentCodeAction
 import actions.FileDescriptionAction
 import settings.PromptDialog
@@ -70,7 +70,7 @@ class SelectFileActionsAction : AnAction() {
                     var createdCount = 0
                     var globalDecision: ConfirmChangesDialog.ResultType? = null
 
-                    val content = RunWithProgress.runWithProgress(project, "The content is being generated...") {
+                    val content = RunWithProgress.runWithProgress(project, "Loading") {
                         ApiClient.sendFolderPrompt(settings.apiKey!!, prompt, getFilesInDirectory(), serverUrl!!, project.name, image)
                     }
 
@@ -134,11 +134,11 @@ class SelectFileActionsAction : AnAction() {
                     val prompt = promptDialog.getPrompt()
                     val image = promptDialog.getImageAsFile()
 
-                    val updated =RunWithProgress.runWithProgress(project, "The content is being generated...") {
+                    val updated = RunWithProgress.runWithProgress(project, "Loading") {
                          ApiClient.sendFileContent(settings.apiKey!!, content, prompt, serverUrl!!, project.name, image)
                     }
                         if (updated == null) {
-                            Messages.showErrorDialog(project, "Server error or invalid response for file request", "AI Plugin")
+                            //Messages.showErrorDialog(project, "Server error or invalid response for file request", "AI Plugin")
                             return
                         }
 

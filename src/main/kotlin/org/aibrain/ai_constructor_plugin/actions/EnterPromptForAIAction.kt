@@ -1,4 +1,4 @@
-package org.example.ai_constructor_plugin.actions
+package org.aibrain.ai_constructor_plugin.actions
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -44,11 +44,11 @@ class EnterPromptForAIAction : AnAction() {
         if (!promptDialog.showAndGet()) return
         val prompt = promptDialog.getPrompt()
         val image = promptDialog.getImageAsFile()
-        val generated = RunWithProgress.runWithProgress(project, "The content is being generated...") {
+        val generated = RunWithProgress.runWithProgress(project, "Loading") {
             ApiClient.sendCutContent(settings.apiKey!!, "", prompt, serverUrl!!, project.name, image)
         }
             if (generated == null) {
-                Messages.showErrorDialog(project, "Server error or invalid response for prompt request", "AI Plugin")
+               // Messages.showErrorDialog(project, "Server error or invalid response for prompt request", "AI Plugin")
                 return
 
             }

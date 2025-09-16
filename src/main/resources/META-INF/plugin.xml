@@ -1,7 +1,7 @@
 <idea-plugin>
-    <id>org.example.ai_constructor_plugin</id>
+    <id>org.aibrain.ai_constructor_plugin</id>
     <name>AI Brain</name>
-    <vendor email="plotnikoffroman@gmail.com">AI BRAIN</vendor>
+    <vendor email="aibrainplugin@gmail.com">AI BRAIN</vendor>
     <description><![CDATA[
 <b>Key features include:</b><br>
 - Get a description of a project and its contents in one click<br>
@@ -10,7 +10,15 @@
 - Generate code at any location<br>
 - Multi-file generation<br>
 - Comment code<br>
-- Chat
+- Chat<br><br>
+
+<b>Models:</b><br>
+- GPT 4o mini<br>
+- GPT 5 mini<br><br>
+
+<b>More about the plugin:</b><br>
+- <a href="https://t.me/AIBRAIN_plugin"><b>Telegram</b></a><br>
+- <a href="https://www.youtube.com/@AIBRAINplugin"><b>Youtube</b></a><br>
 ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
@@ -24,13 +32,13 @@
     <add-to-group group-id="EditorPopupMenu" anchor="last"/>
 </action>
         <action id="SelectCutForAIPlugin"
-                class="org.example.ai_constructor_plugin.actions.SelectCutForAIAction"
+                class="org.aibrain.ai_constructor_plugin.actions.SelectCutForAIAction"
                 text="Select cut for AI Plugin"
                 description="Отправить выделенный код + промт в AI Plugin">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
         <action id="EnterPromptForAIPlugin"
-                class="org.example.ai_constructor_plugin.actions.EnterPromptForAIAction"
+                class="org.aibrain.ai_constructor_plugin.actions.EnterPromptForAIAction"
                 text="Enter prompt for AI Plugin"
                 description="Ввести промт и сгенерировать код в текущем месте курсора">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
@@ -39,7 +47,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow id="AI brain"
                     anchor="right"
-                    factoryClass="org.example.ai_constructor_plugin.toolwindow.MyToolWindowFactory"
+                    factoryClass="org.aibrain.ai_constructor_plugin.toolwindow.MyToolWindowFactory"
                     icon="/icons/toolWindow.svg"
                     canCloseContents="false"
                     stripeTitle="AI Plugin"/>

@@ -1,4 +1,4 @@
-package org.example.ai_constructor_plugin.actions
+package org.aibrain.ai_constructor_plugin.actions
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -72,7 +72,7 @@ class ExplainFolderAction : AnAction() {
                 if (language == "ru") "Russian" else "English",
             )
         }
-        val result = RunWithProgress.runWithProgress(project, "The content is being generated...") {
+        val result = RunWithProgress.runWithProgress(project, "Loading") {
             ApiClient.sendPrompt(apiKey, prompt, serverUrl, null, image)
         }
                 if (result != null) {
@@ -81,7 +81,7 @@ class ExplainFolderAction : AnAction() {
                     dialog.show()
 
                 } else {
-                    Messages.showErrorDialog(project, "Error generating explain Folder", "AI Plugin")
+                    // Messages.showErrorDialog(project, "Error generating explain Folder", "AI Plugin")
                 }
 
 

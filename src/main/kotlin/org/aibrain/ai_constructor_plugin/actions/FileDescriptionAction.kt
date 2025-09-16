@@ -50,14 +50,14 @@ class FileDescriptionAction : AnAction() {
 
 
 
-        val result = RunWithProgress.runWithProgress(project, "The content is being generated...") {
+        val result = RunWithProgress.runWithProgress(project, "Loading") {
             ApiClient.getCodeDescription(apiKey, content, serverUrl, language)
         }
             if (result != null) {
                 val dialog = ExplainFolderDialog(project, result)
                 dialog.show()
             } else {
-                Messages.showErrorDialog(project, "Error generating file description", "AI Plugin")
+                // Messages.showErrorDialog(project, "Error generating file description", "AI Plugin")
             }
 
 
